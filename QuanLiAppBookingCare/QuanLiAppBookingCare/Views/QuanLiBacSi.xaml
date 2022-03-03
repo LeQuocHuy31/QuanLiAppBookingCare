@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuanLiAppBookingCare.Views.QuanLiBacSi"
+             Title="Quản lí bác sĩ"
+             BackgroundColor="AliceBlue">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker x:Name="prkFind" ItemDisplayBinding="{Binding ten_chuyen_khoa}" ItemsSource="{Binding ten_chuyen_khoa}" SelectedIndexChanged="prkFind_SelectedIndexChanged" Title="Chọn chuyên khoa"></Picker>
+            <ScrollView HeightRequest="500">
+                <ListView x:Name="lstDsBacSi" HasUnevenRows="True" ItemSelected="lstDsBacSi_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="5" HeightRequest="60" IsClippedToBounds="True" HasShadow="True"  >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="bacsi.jpg" Aspect="AspectFit" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+                                        <Label Text="{Binding ho_ten}" FontSize="20" FontAttributes="Bold" TextColor="#00CCFF" Grid.Column="1" Grid.Row="0"/>
+                                        <Label Text="{Binding chuyen_khoa}" FontSize="15" TextColor="Black" Grid.Column="1" Grid.Row="1"/>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Button x:Name="cmdThemBacSiMoi" Text="Thêm bác sĩ mới" Clicked="cmdThemBacSiMoi_Clicked" TextColor="White" Margin="10" VerticalOptions="EndAndExpand"
+                    BackgroundColor="#00CCFF" BorderColor="Blue" BorderWidth="1"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

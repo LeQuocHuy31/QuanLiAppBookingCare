@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuanLiAppBookingCare.Views.ThemBS"
+             Title="Thêm Bác Sĩ"
+             BackgroundColor="AliceBlue">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="bacsi.jpg" Aspect="AspectFit" HeightRequest="200" WidthRequest="200" HorizontalOptions="CenterAndExpand"/>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Tên bác sĩ:" Grid.Row="0" Grid.Column="0" FontSize="15" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtTen" TextColor="Black" FontSize="18" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" />
+
+                <Label Text="Ngày sinh:" Grid.Row="1" Grid.Column="0" FontSize="15" TextColor="Black" VerticalOptions="Center" />
+                <DatePicker x:Name="prkNgaySinh" Grid.Row="1" Grid.Column="1" VerticalOptions="Center"/>
+
+                <Label Text="Giới tính:" Grid.Row="2" Grid.Column="0" FontSize="15" TextColor="Black" VerticalOptions="Center" />
+                <Picker x:Name="prkGioiTinh"  Grid.Row="2" Grid.Column="1" VerticalOptions="Center"/>
+                
+                <Label Text="Chuyên khoa:" Grid.Row="3" Grid.Column="0" FontSize="15" TextColor="Black" VerticalOptions="Center" />
+                <Picker x:Name="prkChuyenKhoa" Grid.Row="3" Grid.Column="1" VerticalOptions="Center" Title="Chọn chuyên khoa" ItemDisplayBinding="{Binding ten_chuyen_khoa}" ItemsSource="{Binding ten_chuyen_khoa}" SelectedIndexChanged="prkChuyenKhoa_SelectedIndexChanged"/>
+
+                <Label Text="Email" Grid.Row="4" Grid.Column="0" FontSize="15" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtEmail" TextColor="Black" FontSize="18" Grid.Row="4" Grid.Column="1" VerticalOptions="Center" Keyboard="Email"/>
+
+                <Label Text="ID Zoom:" Grid.Row="5" Grid.Column="0" FontSize="15" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtID" TextColor="Black" FontSize="18" Grid.Row="5" Grid.Column="1" VerticalOptions="Center" Keyboard="Numeric"/>
+
+                <Label Text="Mật khẩu Zoom:" Grid.Row="6" Grid.Column="0" FontSize="15" TextColor="Black" VerticalOptions="Center"/>
+                <Entry x:Name="txtPassword" TextColor="Black" FontSize="18" Grid.Row="6" Grid.Column="1" VerticalOptions="Center"/>
+                
+            </Grid>
+            <Button x:Name="cmdThemBS" Text="Thêm bác sĩ" Clicked="cmdThemBS_Clicked"  TextColor="White" Margin="10" VerticalOptions="EndAndExpand"
+                    BackgroundColor="#00CCFF" BorderColor="Blue" BorderWidth="1"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

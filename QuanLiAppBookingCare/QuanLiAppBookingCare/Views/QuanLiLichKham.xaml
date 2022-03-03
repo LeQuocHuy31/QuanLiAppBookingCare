@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuanLiAppBookingCare.Views.QuanLiLichKham"
+             Title="Quản lí lịch khám">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView HeightRequest="500">
+                <ListView x:Name="lstLichKham" HasUnevenRows="True" ItemSelected="lstLichKham_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame x:Name="fraGioKham" HasShadow="True" CornerRadius="5" IsClippedToBounds="True" HeightRequest="220" Padding="0" Margin="10,5,10,5">
+                                    <StackLayout>
+                                        <StackLayout>
+                                            <Grid Margin="5,0,5,0" ColumnSpacing="30">
+                                                <Grid.ColumnDefinitions >
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="5*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition />
+                                                    <RowDefinition />
+                                                </Grid.RowDefinitions>
+                                                <Image Source="bacsi.jpg" Grid.Row="0" Grid.Column="0" HeightRequest="40" WidthRequest="40" Grid.RowSpan="2"/>
+                                                <Label Text="{Binding bac_si}" TextColor="Black" FontAttributes="Bold" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1" FontSize="18"/>
+                                                <Image Source="benhvien.png" Grid.Row="1" Grid.Column="0" HeightRequest="40" WidthRequest="40"/>
+                                                <Label Text="{Binding chuyen_khoa}" Grid.Row="1" Grid.Column="1" TextColor="Black" VerticalTextAlignment="Center" FontSize="18"/>
+                                            </Grid>
+                                            <StackLayout Margin="10" >
+                                                <Label Text="Lịch Khám" TextColor="Black" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="18"/>
+                                                <Line HeightRequest="2" BackgroundColor="Black" />
+                                                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                                    <Label Text="{Binding ngay}" TextColor="Black" FontAttributes="Bold"></Label>
+                                                    <Label Text="{Binding thoi_gian}" TextColor="Black" FontAttributes="Bold"></Label>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                                    <Label Text="Phòng khám:"></Label>
+                                                    <Label Text="{Binding phong_kham}" TextColor="Black" FontAttributes="Bold"></Label>
+                                                    <Label Text="Loại hinh:"></Label>
+                                                    <Label Text="{Binding loai_hinh}" TextColor="Black" FontAttributes="Bold"></Label>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                                    <Label Text="Giá:"></Label>
+                                                    <Label Text="{Binding gia}" TextColor="Black" FontAttributes="Bold"></Label>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <Button x:Name="cmdNewSchedule" Text="Thêm lịch khám" Clicked="cmdNewSchedule_Clicked"  TextColor="White" Margin="10" VerticalOptions="EndAndExpand"
+                    BackgroundColor="#00CCFF" BorderColor="Blue" BorderWidth="1"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

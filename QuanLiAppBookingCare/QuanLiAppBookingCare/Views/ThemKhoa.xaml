@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuanLiAppBookingCare.Views.ThemKhoa"
+             Title="Thêm Khoa"
+             BackgroundColor="AliceBlue">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Margin="50,50,50,0" Source="khoa.png" Aspect="AspectFit" HeightRequest="150" WidthRequest="150"/>
+            
+                <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Tên Khoa :" FontSize="15" TextColor="Black" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Entry x:Name="txtKhoa" TextColor="Black" FontSize="18" Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+                <Label Text="Ảnh khoa :" FontSize="15" TextColor="Black" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                <Entry x:Name="txtImg" TextColor="Black" FontSize="18" Grid.Row="1" Grid.Column="1" VerticalOptions="Center"/>
+            </Grid>
+           
+            <Button x:Name="cmdThemKhoa" Text="Thêm Khoa" FontSize="20" Clicked="cmdThemKhoa_Clicked" TextColor="White" Margin="10,0,10,40" VerticalOptions="EndAndExpand"
+                    BackgroundColor="#00CCFF" BorderColor="Blue" BorderWidth="1"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

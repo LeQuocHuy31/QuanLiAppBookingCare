@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuanLiAppBookingCare.MainPage"
+         xmlns:dstrang="clr-namespace:QuanLiAppBookingCare.Views">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent Title="Quản lí khoa" Icon="phieu.png" ContentTemplate="{DataTemplate dstrang:QuanLiKhoa}"/>
+            <ShellContent Title="Quản lí bác sĩ" Icon="bacsi.jpg" ContentTemplate="{DataTemplate dstrang:QuanLiBacSi}"/>
+            <ShellContent Title="Quản lí lịch khám" Icon="phieu.png" ContentTemplate="{DataTemplate dstrang:QuanLiLichKham}"/>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Quản lí khoa" Icon="phieu.png" ContentTemplate="{DataTemplate dstrang:QuanLiKhoa}"/>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Quản lí bác sĩ" Icon="bacsi.jpg" ContentTemplate="{DataTemplate dstrang:QuanLiBacSi}"/>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Quản lí lịch khám" Icon="lich_kham.png" ContentTemplate="{DataTemplate dstrang:QuanLiLichKham}"/>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Quản lí doanh thu" Icon="phieu.png" ContentTemplate="{DataTemplate dstrang:QuanLiDoanhThu}"/>
+    </FlyoutItem>
+
+</Shell>

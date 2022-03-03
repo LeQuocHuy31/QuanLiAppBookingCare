@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuanLiAppBookingCare.Views.ChiTietLichKham"
+             Title="Chi tiết lịch khám">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="lich_kham.jpg" Aspect="AspectFit" HeightRequest="180" WidthRequest="180" HorizontalOptions="CenterAndExpand"/>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Chuyên khoa:" Grid.Column="0" Grid.Row="0" TextColor="Black" VerticalOptions="Center" FontSize="15" ></Label>
+                <Entry x:Name="txtChuyenKhoa"  Grid.Column="1" Grid.Row="0" IsEnabled="false"></Entry>
+                <Label Text="Bác sĩ:" Grid.Column="0" Grid.Row="1" TextColor="Black" VerticalOptions="Center" FontSize="15"></Label>
+                <Entry x:Name="txtBacSi" Grid.Column="1" Grid.Row="1" IsEnabled="false"></Entry>
+                <Label Text="Ngày:" Grid.Column="0" Grid.Row="2" TextColor="Black" VerticalOptions="Center" FontSize="15"></Label>
+                <DatePicker x:Name="prkNgay" Format="dd/MM/yyyy" Grid.Column="1" Grid.Row="2"></DatePicker>
+                <Label Text="Thời gian:" Grid.Column="0" Grid.Row="3" TextColor="Black" VerticalOptions="Center" FontSize="15"></Label>
+                <Picker x:Name="prkThoiGian" Title="Chọn buổi" Grid.Column="1" Grid.Row="3"></Picker>
+                <Label Text="Phòng khám:" Grid.Column="0" Grid.Row="4" TextColor="Black" VerticalOptions="Center" FontSize="15"></Label>
+                <Entry x:Name="txtPhong" Grid.Column="1" Grid.Row="4"></Entry>
+                <Label Text="Loại hình:" Grid.Column="0" Grid.Row="5" TextColor="Black" VerticalOptions="Center" FontSize="15"></Label>
+                <Picker x:Name="prkType" Title="Chọn loại hình khám" Grid.Column="1" Grid.Row="5"></Picker>
+                <Label Text="Giá:" Grid.Column="0" Grid.Row="6" TextColor="Black" VerticalOptions="Center" FontSize="15"></Label>
+                <Entry x:Name="txtGia" Grid.Column="1" Grid.Row="6" Keyboard="Numeric"></Entry>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="cmdUpdate" Clicked="cmdUpdate_Clicked" Text="Cập nhập" Grid.Row="0" Grid.Column="0"></Button>
+                <Button x:Name="cmdDelete" Clicked="cmdDelete_Clicked" Text="Xóa" Grid.Row="0" Grid.Column="1"></Button>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
